@@ -37,10 +37,10 @@ bash setup_wordpress.sh
 echo -e "\nCompleted.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
 
 echo "Start installing PHP"
-	sudo apt install apache2 \
-                 ghostscript \
+	sudo apt install ghostscript \
                  libapache2-mod-php \
                  php \
+                 php8.1-fpm \
                  php-bcmath \
                  php-curl \
                  php-imagick \
