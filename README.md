@@ -1,1 +1,1 @@
-## Deply a wordpress machine
+## Deploy a wordpress machine

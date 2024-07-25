@@ -2,13 +2,9 @@
 
 # Download and configure WordPress
 echo "Downloading and configuring WordPress..."
-
-# Create necessary directories
 sudo mkdir -p /var/www/
-
-
-# Check if the WordPress tarball already exists
 TARBALL="/tmp/wordpress.tar.gz"
+
 if [ ! -f "$TARBALL" ]; then
     echo "Downloading WordPress..."
     wget https://wordpress.org/latest.tar.gz -O "$TARBALL"
@@ -22,7 +18,4 @@ sudo tar -xzf "$TARBALL" -C /var/www
 
 # Ensure the directory is accessible to www-data
 sudo chown -R www-data:www-data /var/www
-
-# Move WordPress to the desired directory
 sudo chmod -R 755 /var/www
-
