@@ -20,7 +20,7 @@ if [ ! -f ${NGINX_CONF} ]; then
 server {
     listen 80;
     server_name localhost;
-    root /srv/www/wordpress;
+    root /var/www/wordpress;
 
     index index.html index.htm index.php;
 

@@ -3,9 +3,6 @@
 # Download and configure WordPress
 echo "Downloading and configuring WordPress..."
 
-# Set default WordPress directory if not provided by the user
-read -p "Enter the WordPress directory (default: /var/www/wordpress): " WP_DIR
-
 # Create necessary directories
 sudo mkdir -p /var/www/
 
