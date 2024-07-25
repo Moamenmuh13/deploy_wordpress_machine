@@ -26,12 +26,12 @@ sudo apt install mariadb-server mariadb-client -y && sudo apt install expect -y
 
 bash setup_mariadb.sh
 
-echo -e "\nCompleted.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
+echo -e "\n Mariadb installed.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
 
 echo "Start installing WordPress"
 bash setup_wordpress.sh
 
-echo -e "\nCompleted.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
+echo -e "\n WordPress installed.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
 
 echo "Start installing PHP"
 sudo apt install ghostscript \
@@ -50,10 +50,10 @@ sudo apt install ghostscript \
 
 bash setup_php.sh
 sudo systemctl stop apache2
-echo -e "\nCompleted.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
+echo -e "\n PHP installed.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
 
 echo "Start installing Nginx"
 sudo apt-get install nginx -y
 bash setup_nginx.sh
 
-echo -e "\nCompleted.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
+echo -e "\n Nginx installed.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
