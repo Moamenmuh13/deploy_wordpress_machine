@@ -18,11 +18,15 @@ SERVER_NAME=${SERVER_NAME:-localhost}
 # NGINX_CONF="/etc/nginx/sites-available/wordpress"
 export DB_NAME DB_USER DB_PASS DB_ROOT_PASS SERVER_NAME
 
-echo
+echo "update and upgrade the system"
+sudo sudo apt update -y && sudo apt upgrade -y 
+
 
 echo "Starting LEMP stack deployment..."
 
 echo "Start installing MariaDB"
+    sudo apt install mariadb-server mariadb-client -y && sudo apt install expect -y 
+
 bash setup_mariadb.sh
 
 echo -e "\nCompleted.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
@@ -33,11 +37,26 @@ bash setup_wordpress.sh
 echo -e "\nCompleted.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
 
 echo "Start installing PHP"
+	sudo apt install apache2 \
+                 ghostscript \
+                 libapache2-mod-php \
+                 php \
+                 php-bcmath \
+                 php-curl \
+                 php-imagick \
+                 php-intl \
+                 php-json \
+                 php-mbstring \
+                 php-mysql \
+                 php-xml \
+                 php-zip -y
+
 bash setup_php.sh
 
 echo -e "\nCompleted.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
 
 echo "Start installing Nginx"
+    sudo apt-get install nginx -y
 bash setup_nginx.sh
 
 echo -e "\nCompleted.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"

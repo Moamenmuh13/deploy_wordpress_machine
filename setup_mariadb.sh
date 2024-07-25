@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Install MairaDB package
-sudo apt install mariadb-server mariadb-client -y && sudo apt install expect -y 
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
 

@@ -1,19 +1,4 @@
 #!/bin/bash
-	sudo apt install apache2 \
-                 ghostscript \
-                 libapache2-mod-php \
-                 php \
-                 php-bcmath \
-                 php-curl \
-                 php-imagick \
-                 php-intl \
-                 php-json \
-                 php-mbstring \
-                 php-mysql \
-                 php-xml \
-                 php-zip -y
-
-     
 
 # Create wp-config.php file
 echo "Creating wp-config.php file..."

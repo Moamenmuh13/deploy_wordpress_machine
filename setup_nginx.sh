@@ -1,8 +1,5 @@
 #!/bin/bash
 
-
-sudo apt-get install nginx -y
-
 # starting nginx service
 sudo service nginx start
 
