@@ -1,18 +1,17 @@
 #!/bin/bash
 
-sudo apt-get update -y -qq && \
-	 sudo apt-get install nginx -y
 
-WP_DIR=${WP_DIR:-/srv/www/wordpress}
+sudo apt-get install nginx -y
 
 # starting nginx service
 sudo service nginx start
 
 # allowing nginx on firewall
+sudo ufw enable
 sudo ufw allow 'Nginx HTTP'
 
 # Give the user ownership to website files for easy editing
-sudo chown -R "$USER":"$USER" /srv/www/wordpress
+sudo chown -R "$USER":"$USER" /var/www/wordpress
 
 # SERVER_NAME=${SERVER_NAME}
 NGINX_CONF="/etc/nginx/sites-available/wordpress"
@@ -24,9 +23,9 @@ if [ ! -f ${NGINX_CONF} ]; then
 server {
     listen 80;
     server_name localhost;
-    root ${WP_DIR};
+    root /srv/www/wordpress;
 
-    index index.php index.html index.htm index.php;
+    index index.html index.htm index.php;
 
     location / {
         try_files \$uri \$uri/ =404;

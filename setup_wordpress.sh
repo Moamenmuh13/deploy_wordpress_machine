@@ -4,14 +4,11 @@
 echo "Downloading and configuring WordPress..."
 
 # Set default WordPress directory if not provided by the user
-read -p "Enter the WordPress directory (default: /srv/www/wordpress): " WP_DIR
-WP_DIR=${WP_DIR:-/srv/www/wordpress}
+read -p "Enter the WordPress directory (default: /var/www/wordpress): " WP_DIR
 
 # Create necessary directories
-sudo mkdir -p /srv/www/
+sudo mkdir -p /var/www/
 
-# Set ownership
-sudo chown -R www-data:www-data /srv/www
 
 # Check if the WordPress tarball already exists
 TARBALL="/tmp/wordpress.tar.gz"
@@ -24,11 +21,11 @@ fi
 
 # Extract WordPress
 echo "Extracting WordPress..."
-sudo tar -xzf "$TARBALL" -C /srv/www/
+sudo tar -xzf "$TARBALL" -C /var/www
 
 # Ensure the directory is accessible to www-data
-sudo chown -R www-data:www-data /srv/www
+sudo chown -R www-data:www-data /var/www
 
 # Move WordPress to the desired directory
-sudo chmod -R 755 "${WP_DIR}"
+sudo chmod -R 755 /var/www
 
