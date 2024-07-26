@@ -23,15 +23,15 @@ This project provides a set of bash scripts to automate the deployment of a LEMP
 git clone https://github.com/Moamenmuh13/deploy_wordpress_machine.git
 cd deploy_wordpress_machine
 
-### Step 2: Make Scripts Executable
+## Step 2: Make Scripts Executable
 chmod +x deploy_wordpress_lemp.sh setup_mariadb.sh setup_wordpress.sh setup_php.sh setup_nginx.sh|
 
-### Step 3: Run the Deployment Script
+## Step 3: Run the Deployment Script
 
 ./deploy_wordpress_lemp.sh
 ```
 
-### Step 4: Follow Prompts: 
+## Step 4: Follow Prompts: 
 The script will prompt you for the following information:
 
     Database name (default: wordpress)
@@ -41,18 +41,18 @@ The script will prompt you for the following information:
     Domain or IP address for Nginx configuration (default: localhost)
 
 
-### File Descriptions
+## File Descriptions
     deploy_wordpress_lemp.sh.sh
-    The main script to update the system, install necessary packages, and execute the setup scripts for MariaDB, WordPress, PHP, and Nginx.
+        The main script to update the system, install necessary packages, and execute the setup scripts for MariaDB, WordPress, PHP, and Nginx.
 
     setup_mariadb.sh
-    Starts and enables the MariaDB service, creates the WordPress database, and sets up the database user with necessary privileges.
+        Starts and enables the MariaDB service, creates the WordPress database, and sets up the database user with necessary privileges.
 
     setup_wordpress.sh
-    Downloads and extracts the latest WordPress package, sets appropriate permissions, and ensures the directory is accessible to the web server.
+        Downloads and extracts the latest WordPress package, sets appropriate permissions, and ensures the directory is accessible to the web server.
 
     setup_php.sh
-    Creates the wp-config.php file and configures it with the database details provided during the setup.
+        Creates the wp-config.php file and configures it with the database details provided during the setup.
 
     setup_nginx.sh
-    Starts the Nginx service, configures the firewall, sets up the Nginx configuration for WordPress, tests the configuration, and reloads Nginx.
+        Starts the Nginx service, configures the firewall, sets up the Nginx configuration for WordPress, tests the configuration, and reloads Nginx.
