@@ -34,9 +34,8 @@ This project provides a set of bash scripts to automate the deployment of a LEMP
 
 ## Usage
 
-### Step 1: Clone the Repository
-
 ```bash
+### Step 1: Clone the Repository
 git clone https://github.com/Moamenmuh13/deploy_wordpress_machine.git
 cd deploy_wordpress_machine
  
