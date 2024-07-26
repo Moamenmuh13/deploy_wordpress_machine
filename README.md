@@ -17,21 +17,7 @@ This project provides a set of bash scripts to automate the deployment of a LEMP
 
 ## Usage
 
-### Step 1: Clone the Repository
-
-```bash
-git clone https://github.com/Moamenmuh13/deploy_wordpress_machine.git
-cd deploy_wordpress_machine
-
-## Step 2: Make Scripts Executable
-chmod +x deploy_wordpress_lemp.sh setup_mariadb.sh setup_wordpress.sh setup_php.sh setup_nginx.sh|
-
-## Step 3: Run the Deployment Script
-
-./deploy_wordpress_lemp.sh
-```
-
-## Step 4: Follow Prompts: 
+## Follow Prompts: 
 The script will prompt you for the following information:
 
     Database name (default: wordpress)
@@ -55,4 +41,18 @@ The script will prompt you for the following information:
         Creates the wp-config.php file and configures it with the database details provided during the setup.
 
     setup_nginx.sh
-        Starts the Nginx service, configures the firewall, sets up the Nginx configuration for WordPress, tests the configuration, and reloads Nginx.
+        Starts the Nginx service, configures the firewall, sets up the Nginx configuration for WordPress, tests the configuration, and reloads Nginx. 
+        
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/Moamenmuh13/deploy_wordpress_machine.git
+cd deploy_wordpress_machine
+
+## Step 2: Make Scripts Executable
+chmod +x deploy_wordpress_lemp.sh setup_mariadb.sh setup_wordpress.sh setup_php.sh setup_nginx.sh|
+
+## Step 3: Run the Deployment Script
+
+./deploy_wordpress_lemp.sh
+```
