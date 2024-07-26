@@ -39,7 +39,6 @@ This project provides a set of bash scripts to automate the deployment of a LEMP
 git clone https://github.com/Moamenmuh13/deploy_wordpress_machine.git
 cd deploy_wordpress_machine
  
-
 ### Step 2: Make Scripts Executable
 chmod +x deploy_wordpress_lemp.sh setup_mariadb.sh setup_wordpress.sh setup_php.sh setup_nginx.sh
 

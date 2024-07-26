@@ -6,17 +6,17 @@ sudo ufw enable
 sudo ufw allow 'Nginx HTTP'
 
 # Give the user ownership to website files for easy editing
-sudo chown -R "$USER":"$USER" /var/www/wordpress
+sudo chown -R "$USER":"$USER" /var/www/${WORDPRESS_NAME_DIR}
 
 # Configure Nginx
-NGINX_CONF="/etc/nginx/sites-available/wordpress"
+NGINX_CONF="/etc/nginx/sites-available/${WORDPRESS_NAME_DIR}"
 if [ ! -f ${NGINX_CONF} ]; then
   echo "Creating Nginx configuration file for WordPress..."
   sudo tee ${NGINX_CONF} > /dev/null <<EOL
 server {
     listen 80;
-    server_name localhost;
-    root /var/www/wordpress;
+    server_name ${SERVER_NAME};
+    root /var/www/${WORDPRESS_NAME_DIR};
 
     index index.html index.htm index.php;
 

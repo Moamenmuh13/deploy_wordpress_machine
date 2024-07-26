@@ -16,6 +16,8 @@ fi
 echo "Extracting WordPress..."
 sudo tar -xzf "$TARBALL" -C /var/www
 
+sudo mv /var/www/wordpress /var/www/${WORDPRESS_NAME_DIR}
+
 # Ensure the directory is accessible to www-data
 sudo chown -R www-data:www-data /var/www
 sudo chmod -R 755 /var/www

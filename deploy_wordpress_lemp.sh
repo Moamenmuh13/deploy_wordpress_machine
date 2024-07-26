@@ -8,13 +8,13 @@ DB_USER=${DB_USER:-rainpole}
 read -sp "Enter the database password (default: Newpass1234!): " DB_PASS
 echo
 DB_PASS=${DB_PASS:-Newpass1234}
-read -sp "Enter the MySQL root password (default: Newpass1234!): " DB_ROOT_PASS
-echo
-DB_ROOT_PASS=${DB_ROOT_PASS:-Newpass1234}
 read -p "Enter your domain or IP address for Nginx configuration (default: localhost): " SERVER_NAME
 SERVER_NAME=${SERVER_NAME:-localhost}
+read -p "Enter the destination of wordpress config directory (default: /var/www/wordpress) : " WORDPRESS_NAME_DIR
+echo
+WORDPRESS_NAME_DIR=${WORDPRESS_NAME_DIR:-wordpress}
 
-export DB_NAME DB_USER DB_PASS DB_ROOT_PASS SERVER_NAME
+export DB_NAME DB_USER DB_PASS DB_ROOT_PASS SERVER_NAME WORDPRESS_NAME_DIR
 
 echo "Update and upgrade the system"
 sudo apt update -y && sudo apt upgrade -y 
