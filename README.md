@@ -29,29 +29,3 @@ chmod +x deploy_wordpress_lemp.sh setup_mariadb.sh setup_wordpress.sh setup_php.
 ### Step 3: Run the Deployment Script
 
 ./deploy_wordpress_lemp.sh
-
-### Step 4: Follow Prompts: 
-The script will prompt you for the following information:
-
-    Database name (default: wordpress)
-    Database user (default: rainpole)
-    Database password (default: Newpass1234)
-    MySQL root password (default: Newpass1234)
-    Domain or IP address for Nginx configuration (default: localhost)
-
-
-### File Descriptions
-    deploy_wordpress_lemp.sh.sh
-    The main script to update the system, install necessary packages, and execute the setup scripts for MariaDB, WordPress, PHP, and Nginx.
-
-    setup_mariadb.sh
-    Starts and enables the MariaDB service, creates the WordPress database, and sets up the database user with necessary privileges.
-
-    setup_wordpress.sh
-    Downloads and extracts the latest WordPress package, sets appropriate permissions, and ensures the directory is accessible to the web server.
-
-    setup_php.sh
-    Creates the wp-config.php file and configures it with the database details provided during the setup.
-
-    setup_nginx.sh
-    Starts the Nginx service, configures the firewall, sets up the Nginx configuration for WordPress, tests the configuration, and reloads Nginx.
