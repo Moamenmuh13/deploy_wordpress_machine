@@ -16,8 +16,14 @@ fi
 echo "Extracting WordPress..."
 sudo tar -xzf "$TARBALL" -C /var/www
 
-sudo mv /var/www/wordpress /var/www/${WORDPRESS_NAME_DIR}
+# Check if WORDPRESS_NAME_DIR is set and not empty
+if [ -z "$WORDPRESS_NAME_DIR" ]; then
+    WORDPRESS_NAME_DIR="wordpress"
+fi
 
-# Ensure the directory is accessible to www-data
-sudo chown -R www-data:www-data /var/www
-sudo chmod -R 755 /var/www
+# Conditionally move the WordPress directory
+if [ "$WORDPRESS_NAME_DIR" != "wordpress" ]; then
+    sudo mv /var/www/wordpress /var/www/${WORDPRESS_NAME_DIR}
+else
+    echo "Using default WordPress directory, no need to move."
+fi
