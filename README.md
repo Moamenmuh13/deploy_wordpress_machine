@@ -51,5 +51,4 @@ chmod +x deploy_wordpress_lemp.sh setup_mariadb.sh setup_wordpress.sh setup_php.
 Database name (default: wordpress)
 Database user (default: rainpole)
 Database password (default: Newpass1234)
-MySQL root password (default: Newpass1234)
 Domain or IP address for Nginx configuration (default: localhost)
