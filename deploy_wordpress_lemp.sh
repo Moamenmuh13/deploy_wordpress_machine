@@ -57,3 +57,17 @@ sudo apt-get install nginx -y
 bash setup_nginx.sh
 
 echo -e "\n Nginx installed.✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n"
+
+# Define the output file path
+OUTPUT_FILE="$HOME/deployment_info.txt"
+
+# Write the important variables to the file
+echo -e "\nScript completed successfully. Here are the important variables:\n" > "$OUTPUT_FILE"
+echo "Database Name: $DB_NAME" >> "$OUTPUT_FILE"
+echo "Database User: $DB_USER" >> "$OUTPUT_FILE"
+echo "Database Password: $DB_PASS" >> "$OUTPUT_FILE"
+echo "Server Name: $SERVER_NAME" >> "$OUTPUT_FILE"
+echo "WordPress Directory: $WORDPRESS_NAME_DIR" >> "$OUTPUT_FILE"
+
+
+echo -e "\nImportant variables have been saved to $OUTPUT_FILE"
