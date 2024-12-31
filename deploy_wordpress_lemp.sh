@@ -1,4 +1,14 @@
-w#!/bin/bash
+#!/bin/bash
+
+# Function to validate the database name
+validate_db_name() {
+    local db_name=$1
+    if [[ $db_name =~ ^[a-zA-Z0-9_]+$ ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
 
 # Prompt for the database name and validate
 while true; do
@@ -12,31 +22,20 @@ while true; do
     fi
 done
 
-echo "Database name is valid: $DB_NAME"
-
-# Prompt for the database user and password
-read -p "Enter the database user (default: rainpole): " DB_USER
-DB_USER=${DB_USER:-rainpole}
-read -sp "Enter the database password (default: Newpass1234!): " DB_PASS
-echo
+# Default values
 DB_PASS=${DB_PASS:-Newpass1234}
+
+# Prompt for server name and WordPress directory
 read -p "Enter your domain or IP address for Nginx configuration (default: localhost): " SERVER_NAME
 SERVER_NAME=${SERVER_NAME:-localhost}
-read -p "Enter the destination of wordpress config directory (default: /var/www/wordpress) : " WORDPRESS_NAME_DIR
+
+read -p "Enter the destination of WordPress config directory (default: /var/www/wordpress): " WORDPRESS_NAME_DIR
+WORDPRESS_NAME_DIR=${WORDPRESS_NAME_DIR:-/var/www/wordpress}
+
 echo
-WORDPRESS_NAME_DIR=${WORDPRESS_NAME_DIR:-wordpress}
 
-
-# Function to validate the database name
-validate_db_name() {
-    local db_name=$1
-    if [[ $db_name =~ ^[a-zA-Z0-9_]+$ ]]; then
-        return 0
-    else
-        return 1
-    fi
-}
-
+# Export variables
+export DB_NAME DB_USER DB_PASS DB_ROOT_PASS SERVER_NAME WORDPRESS_NAME_DIR
 
 
 export DB_NAME DB_USER DB_PASS DB_ROOT_PASS SERVER_NAME WORDPRESS_NAME_DIR
