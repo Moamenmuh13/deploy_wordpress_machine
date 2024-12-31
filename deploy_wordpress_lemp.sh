@@ -22,6 +22,8 @@ while true; do
     fi
 done
 
+read -sp "Enter the database password (default: Newpass1234!): " DB_PASS
+echo
 # Default values
 DB_PASS=${DB_PASS:-Newpass1234}
 
@@ -35,9 +37,6 @@ WORDPRESS_NAME_DIR=${WORDPRESS_NAME_DIR:-/var/www/wordpress}
 echo
 
 # Export variables
-export DB_NAME DB_USER DB_PASS DB_ROOT_PASS SERVER_NAME WORDPRESS_NAME_DIR
-
-
 export DB_NAME DB_USER DB_PASS DB_ROOT_PASS SERVER_NAME WORDPRESS_NAME_DIR
 
 echo "Update and upgrade the system"
