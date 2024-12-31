@@ -2,8 +2,8 @@
 
 # Start nginx service and configure firewall
 sudo systemctl start nginx
-sudo ufw enable
-sudo ufw allow 'Nginx HTTP'
+# sudo ufw enable
+# sudo ufw allow 'Nginx HTTP'
 
 # Give the user ownership to website files for easy editing
 sudo chown -R "$USER":"$USER" /var/www/${WORDPRESS_NAME_DIR}

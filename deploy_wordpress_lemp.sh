@@ -1,8 +1,20 @@
-#!/bin/bash
+w#!/bin/bash
 
-# Prompt for user inputs
-read -p "Enter the database name (default: wordpress): " DB_NAME
-DB_NAME=${DB_NAME:-wordpress}
+# Prompt for the database name and validate
+while true; do
+    read -p "Enter the database name (default: wordpress): " DB_NAME
+    DB_NAME=${DB_NAME:-wordpress}
+
+    if validate_db_name "$DB_NAME"; then
+        break
+    else
+        echo "Syntax error: '$DB_NAME' is not a valid database name. Please use only letters, numbers, and underscores."
+    fi
+done
+
+echo "Database name is valid: $DB_NAME"
+
+# Prompt for the database user and password
 read -p "Enter the database user (default: rainpole): " DB_USER
 DB_USER=${DB_USER:-rainpole}
 read -sp "Enter the database password (default: Newpass1234!): " DB_PASS
@@ -13,6 +25,19 @@ SERVER_NAME=${SERVER_NAME:-localhost}
 read -p "Enter the destination of wordpress config directory (default: /var/www/wordpress) : " WORDPRESS_NAME_DIR
 echo
 WORDPRESS_NAME_DIR=${WORDPRESS_NAME_DIR:-wordpress}
+
+
+# Function to validate the database name
+validate_db_name() {
+    local db_name=$1
+    if [[ $db_name =~ ^[a-zA-Z0-9_]+$ ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+
 
 export DB_NAME DB_USER DB_PASS DB_ROOT_PASS SERVER_NAME WORDPRESS_NAME_DIR
 
